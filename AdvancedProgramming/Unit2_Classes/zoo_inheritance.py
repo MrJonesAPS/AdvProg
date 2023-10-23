@@ -15,13 +15,15 @@
 
 #define classes
 class ZooAnimal:
-    def __init__(self, name):
+    def __init__(self, name, mass):
 
         self.name = name
-        #PLEASE LEAVE ALONE
+        self.mass = mass
+        #We should read the double underscores
+        # as "PLEASE LEAVE ALONE"
         self.__hunger = 100
         self.energy = 50
-        print(self)
+        
 
     def eat(self, food):
         self.__hunger -= 20
@@ -35,12 +37,16 @@ class ZooAnimal:
         print("everybody poops")
 
     def __str__(self):
-        return self.name + " is a " + type(self).__name__
+        return self.name + " is a " \
+            + type(self).__name__ \
+            + " who weighs " \
+            + str(self.mass) + "kg."
+    
 
 class Lion(ZooAnimal):
     #Constructor
-    def __init__(self, name):
-        super().__init__(name)
+    def __init__(self, name, mass):
+        super().__init__(name, mass)
         
 
     def roar(self):
@@ -49,8 +55,8 @@ class Lion(ZooAnimal):
     
 class Sloth(ZooAnimal):
     #Constructor
-    def __init__(self, name):
-        super().__init__(name)
+    def __init__(self, name, mass):
+        super().__init__(name, mass)
 
     def squeak(self):
         print("squeak")
@@ -66,12 +72,6 @@ simba = Lion("simba")
 simba.roar()
 duck.eat("grass")
 
-
 sleepy = Sloth("sleepy")
 sleepy.squeak()
 sleepy.sleep(10)
-
-print("sleepy's hunger is",sleepy._ZooAnimal__hunger)
-print("but i'm going to change it")
-sleepy._ZooAnimal__hunger = 10
-print("now sleepy's hunger is",sleepy._ZooAnimal__hunger)
