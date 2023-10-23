@@ -16,6 +16,7 @@ class SchoolPeople:
 
     def __str__(self):
         return self.__name + " is a " \
+        + type(self).__name__ \
         + " who is " \
         + str(self.age) + " years old"
 
@@ -30,8 +31,8 @@ class Teacher(SchoolPeople):
         self.subject  = subject
 
 #main
-Student1 = Student("student1", 15, 10)
-Teacher1 = Teacher("Teacher1",45,"Math")
+student1 = Student("Student1", 15, 10)
+teacher1 = Teacher("Teacher1",45,"Math")
 
-print(Student1)
-print(Teacher1)
+print(student1)
+print(teacher1)
