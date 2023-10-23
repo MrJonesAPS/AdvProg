@@ -66,12 +66,12 @@ class Sloth(ZooAnimal):
 
 
 #main
-duck = Lion("duck")
-simba = Lion("simba")
+duck = Lion("duck", 400)
+simba = Lion("simba", 300)
 
 simba.roar()
 duck.eat("grass")
 
-sleepy = Sloth("sleepy")
+sleepy = Sloth("sleepy", 5)
 sleepy.squeak()
 sleepy.sleep(10)
